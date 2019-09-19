@@ -6,7 +6,7 @@ import jade.core.behaviours.TickerBehaviour;
 
 public class TickerAgent extends Agent{
 	
-	// Get the current time - this wil be the time taht the agents was lunched at
+	// Get the current time - this will be the time that the agents was lunched at
 	long t0 = System.currentTimeMillis();
 	
 	Behaviour loop;

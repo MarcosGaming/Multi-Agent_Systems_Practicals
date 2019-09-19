@@ -17,7 +17,6 @@ public class Application {
 			rma.start();
 			
 			// Tutorial
-			
 			// Now start our own SimpleAgent, called Fred
 			/*AgentController myAgent = myContainer.createNewAgent("Fred", SimpleAgent.class.getCanonicalName(), null);
 			myAgent.start();
@@ -28,7 +27,7 @@ public class Application {
 			AgentController myTickerAgent = myContainer.createNewAgent("Tickles", TickerAgent.class.getCanonicalName(), null);
 			myTickerAgent.start();*/
 			
-			// Exercise 1: Create 10 simple agents with different names
+			// Exercise 1,2 and 3
 			/*String[] names = {"Thor", "Fred", "Jorge", "Manuel", "Ron", "Harry", "Hermione", "Rosalia", "Manolo", "Ruberto"};
 			for(int i = 0; i < 10; i++)
 			{
@@ -36,7 +35,17 @@ public class Application {
 				myAgent.start();
 			}*/
 			
-			// Exercise 2: Modify simple agent so that each will print its name every 10 seconds
+			// Exercise 5a
+			/*AgentController myAgent = myContainer.createNewAgent("Fred", SimpleAgent2.class.getCanonicalName(), null);
+			myAgent.start();*/
+			
+			// Exercise 5b
+			/*AgentController myTimeAgent = myContainer.createNewAgent("Chronos", TimeAgent.class.getCanonicalName(), null);
+			myTimeAgent.start();*/
+			
+			// Exercise 5c
+			AgentController myFSMAgent = myContainer.createNewAgent("Terminator", FSMAgent.class.getCanonicalName(), null);
+			myFSMAgent.start();
 			
 			
 			
