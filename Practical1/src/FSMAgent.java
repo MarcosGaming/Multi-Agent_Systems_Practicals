@@ -32,12 +32,10 @@ import jade.core.behaviours.FSMBehaviour;
  */
 public class FSMAgent extends Agent {
 	// State names
-	private static final String STATE_A = "A";
-	private static final String STATE_B = "B";
-	private static final String STATE_C = "C";
-	private static final String STATE_D = "D";
-	private static final String STATE_E = "E";
-	private static final String STATE_F = "F";
+	private static final String STATE_A = "ASLEEP";
+	private static final String STATE_B = "AWAKE";
+	private static final String STATE_C = "EATING";
+	private static final String STATE_D = "DEAD";
 	
 	protected void setup() {
 		FSMBehaviour fsm = new FSMBehaviour(this) {
@@ -49,32 +47,30 @@ public class FSMAgent extends Agent {
 		};
 		
 		// Register state A (first state)
-		fsm.registerFirstState(new NamePrinter(), STATE_A);
+		fsm.registerFirstState(new RandomGenerator(3
+				), STATE_A);
 		
 		// Register state B
-		fsm.registerState(new NamePrinter(), STATE_B);
+		fsm.registerState(new RandomGenerator(4), STATE_B);
 		
 		// Register state C
-		fsm.registerState(new RandomGenerator(3), STATE_C);
+		fsm.registerState(new RandomGenerator(2), STATE_C);
 		
 		// Register state D
-		fsm.registerState(new NamePrinter(), STATE_D);
-		
-		// Register state E
-		fsm.registerState(new RandomGenerator(4), STATE_E);
-		
-		// Register state F (final state)
-		fsm.registerLastState(new NamePrinter(), STATE_F);
+		fsm.registerLastState(new NamePrinter(), STATE_D);
 
 		// Register the transitions
-		fsm.registerDefaultTransition(STATE_A, STATE_B);
-		fsm.registerDefaultTransition(STATE_B, STATE_C);
-		fsm.registerTransition(STATE_C, STATE_C, 0);
+		fsm.registerTransition(STATE_B, STATE_A, 0);
+		fsm.registerTransition(STATE_B, STATE_C, 1);
+		fsm.registerTransition(STATE_B, STATE_B, 2);
+		fsm.registerTransition(STATE_B, STATE_D, 3);
+		
+		fsm.registerTransition(STATE_C, STATE_B, 0);
 		fsm.registerTransition(STATE_C, STATE_D, 1);
-		fsm.registerTransition(STATE_C, STATE_A, 2);
-		fsm.registerDefaultTransition(STATE_D, STATE_E);
-		fsm.registerTransition(STATE_E, STATE_F, 3);
-		fsm.registerDefaultTransition(STATE_E, STATE_B);
+		
+		fsm.registerTransition(STATE_A, STATE_B, 0);
+		fsm.registerTransition(STATE_A, STATE_A, 1);
+		fsm.registerTransition(STATE_A, STATE_D, 2);
 		
 		addBehaviour(fsm);
 	}

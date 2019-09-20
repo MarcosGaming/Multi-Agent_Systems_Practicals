@@ -44,8 +44,12 @@ public class Application {
 			myTimeAgent.start();*/
 			
 			// Exercise 5c
-			AgentController myFSMAgent = myContainer.createNewAgent("Terminator", FSMAgent.class.getCanonicalName(), null);
-			myFSMAgent.start();
+			/*AgentController myFSMAgent = myContainer.createNewAgent("Terminator", FSMAgent.class.getCanonicalName(), null);
+			myFSMAgent.start();*/
+			
+			// Exercise 5d
+			AgentController myComplexAgent = myContainer.createNewAgent("Complexor", ComplexBehaviourAgent.class.getCanonicalName(), null);
+			myComplexAgent.start();
 			
 			
 			
