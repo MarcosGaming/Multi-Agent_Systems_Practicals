@@ -1,4 +1,4 @@
-import jade.core.Agent;
+aimport jade.core.Agent;
 import jade.core.behaviours.*;
 import jade.domain.DFService;
 import jade.domain.FIPAException;

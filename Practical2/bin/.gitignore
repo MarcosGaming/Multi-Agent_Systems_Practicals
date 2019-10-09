@@ -7,3 +7,8 @@
 /BookSellerAgent$PurchaseOrdersServer.class
 /BookBuyerAgent$1.class
 /BookBuyerAgent$RequestPerformer.class
+/AdvertiserAgent.class
+/AdvertiserAgent$SellerNotification.class
+/AdvertiserAgent$Book.class
+/AdvertiserAgent$SellerCatalogue.class
+/AdvertiserAgent$BuyerRequestBook.class
